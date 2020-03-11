@@ -1,23 +1,23 @@
 package br.com.zup.inventory.event;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.Map;
 
 public class OrderCreatedEvent {
 
     private String orderId;
     private String customerId;
     private BigDecimal amount;
-    private List<String> itemIds;
+    private Map<String, Integer> items;
 
     public OrderCreatedEvent() {
     }
 
-    public OrderCreatedEvent(String orderId, String customerId, BigDecimal amount, List<String> itemIds) {
+    public OrderCreatedEvent(String orderId, String customerId, BigDecimal amount, Map<String, Integer> items) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.amount = amount;
-        this.itemIds = itemIds;
+        this.items = items;
     }
 
     public String getOrderId() {
@@ -44,11 +44,11 @@ public class OrderCreatedEvent {
         this.amount = amount;
     }
 
-    public List<String> getItemIds() {
-        return itemIds;
+    public Map<String, Integer> getItems() {
+        return items;
     }
 
-    public void setItemIds(List<String> itemIds) {
-        this.itemIds = itemIds;
+    public void setItems(Map<String, Integer> items) {
+        this.items = items;
     }
 }
