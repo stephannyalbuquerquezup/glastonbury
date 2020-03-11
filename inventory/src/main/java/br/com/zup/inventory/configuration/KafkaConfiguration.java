@@ -49,6 +49,6 @@ public class KafkaConfiguration {
     @KafkaListener(topics = "created-orders", groupId = "inventory-group-id")
     public void listen(String message) throws IOException {
         OrderCreatedEvent event = this.objectMapper.readValue(message, OrderCreatedEvent.class);
-        System.out.println("Received event: " + event.getCustomerId());
+        System.out.println(event);
     }
 }
